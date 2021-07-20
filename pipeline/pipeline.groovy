@@ -4,19 +4,9 @@ pipeline {
         gitParameter branchFilter: 'origin/(.*)', defaultValue: 'master', name: 'BRANCH', type: 'PT_BRANCH'
     }
     stages {
-        stage('Download Source') {
+        stage('Example') {
             steps {
-                //
-            }
-        }
-        stage('Build') {
-            steps {
-                //
-            }
-        }
-        stage('Deploy') {
-            steps {
-                //
+                git branch: "${params.branch}", url: 'https://github.com/jenkinsci/git-parameter-plugin.git'
             }
         }
     }
